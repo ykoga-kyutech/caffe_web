@@ -1,0 +1,11 @@
+<launch>
+  <arg name="image" value="/image_raw" />
+  
+  <include file="$(find ros_caffe)/launch/ros_caffe.launch">
+	<arg name="image" value="$(arg image)" />
+  </include>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+  <include file="$(find roswww)/launch/roswww.launch" />
+  <node name="mjpeg_server" pkg="mjpeg_server" type="mjpeg_server" />
+</launch>
+

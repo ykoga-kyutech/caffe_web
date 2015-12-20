@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+        <head>
+                <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.65, user-scalable=yes" />
+                <title>Caffe + ROS on the Web</title>
+                <script src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.js"></script>
+                <script src="http://cdn.robotwebtools.org/roslibjs/current/roslib.js"></script>
+                <script src="http://cdn.robotwebtools.org/mjpegcanvasjs/current/mjpegcanvas.min.js"></script>
+		<script type="text/javascript" src="caffe_web.js"></script>
+                <script type="text/javascript">
+                 function init() {
+                    var readyStateCheckInterval = setInterval(function() {
+                           if (document.readyState === "complete") {
+                          init();
+                          clearInterval(readyStateCheckInterval);
+                           }
+                }, 100);
+                 }
+ 	        </script>
+		<style type="text/css">
+        	body,input {
+			font-family: sans-serif narrow;
+	     		font-size: 18pt;
+        	}
+        	.checkbox {
+	       		width: 18px;
+	       		height: 18px;
+        	}
+      		</style>
+        </head>
+
+        <body onload="init();init_ros();">
+		<h2>Caffe + ROS on the Web</h2>
+		<p>Connection status： <label id="state">Disconnect</label></p>
+                <div>Server Hostname or IP: <input type="text" id="rosbridgeHost" value="">&nbsp; Port: <input
+                    type="text" id="rosbridgePort" size="5" value="">&nbsp;<nobr />
+                  Connect:&nbsp;<input id="connectROS" type="checkbox" class="checkbox" checked
+                    onClick="connectDisconnect();">
+                </div>
+
+		<div id="videoCanvas" style="display: block; margin: 10px;"></div>
+		<h3>Caffe Result:</h3>
+		<div id="caffe_result"> </div>
+        </body>
+</html>
+
+
+
+
+
