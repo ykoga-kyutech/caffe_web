@@ -32,4 +32,4 @@ http://[IP ADDRESS OF THE MACHINE RUNNING ON THE caffe_web]:8085/caffe_web/index
 
 Then you can see the page showing video and the label estimated by Caffe.
 
-![caffe_result](https://raw.githubusercontent.com/ykoga-kyutech/caffe_web/master/caffe_web_result.png)
+![caffe_result](https://raw.githubusercontent.com/ykoga-kyutech/caffe_web/master/ros_caffe_web_result.png)
